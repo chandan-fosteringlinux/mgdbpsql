@@ -1,17 +1,10 @@
-// import jakarta.persistence.*
-// import java.util.*
-// import io.quarkus.hibernate.orm.panache.PanacheEntity
 
-// @Entity
-// @Table(name = "provider_channels")
-// class ProviderChannel : PanacheEntity() {
+package com.indigo.get.details.by.providerId.model
 
-//     @Column(name = "provider_id")
-//     lateinit var providerId: UUID
+import java.math.BigDecimal
 
-//     @Column(name = "channel_type")
-//     lateinit var channelType: String
 
-//     @Column(name = "price_per_message")
-//     var pricePerMessage: Int = 0
-// }
+data class ProviderChannelPrice(
+    val channelType: String,
+    val pricePerMessage: BigDecimal
+)

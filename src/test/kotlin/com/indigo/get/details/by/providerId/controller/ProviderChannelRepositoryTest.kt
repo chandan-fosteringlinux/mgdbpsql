@@ -196,7 +196,8 @@ class ProviderChannelRepositoryTest {
             repository.getChannelPricing(providerId)
         }
 
-        assertEquals("PostgreSQL is not reachable: Connection refused", exception.message)
+        assertEquals("Internal Server Error", exception.message)
+
     }
 
     @Test

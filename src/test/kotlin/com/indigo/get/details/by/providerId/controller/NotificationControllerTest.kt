@@ -132,12 +132,12 @@ class NotificationControllerTest {
     fun `should throw DatabaseUnavailableException when service throws it`() {
         val providerId = "b3aa28d6-1234-4567-9876-aabbccddeeff"
         `when`(service.getNotifications(providerId, null, null, null, null))
-            .thenThrow(DatabaseUnavailableException("Database unreachable"))
+            .thenThrow(DatabaseUnavailableException("Internal Server Error"))
 
         val exception = assertThrows(DatabaseUnavailableException::class.java) {
             controller.getDetails(providerId, null, null, null, null)
         }
 
-        assertTrue(exception.message!!.contains("Database unreachable"))
+        assertEquals("Internal Server Error", exception.message)
     }
 }

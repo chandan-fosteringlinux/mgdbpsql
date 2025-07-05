@@ -1,5 +1,4 @@
 
-
 package com.indigo.get.details.by.providerId.model
 
 import java.math.BigDecimal

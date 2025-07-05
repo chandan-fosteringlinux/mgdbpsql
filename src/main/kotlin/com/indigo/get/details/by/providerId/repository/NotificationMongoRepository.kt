@@ -61,7 +61,7 @@ class MongoNotificationRepository @Inject constructor(
             results
         } catch (e: Exception) {
             LOG.error("MongoDB query failed: ${e.message}", e)
-            throw DatabaseUnavailableException("MongoDB is not reachable: ${e.message}")
+            throw DatabaseUnavailableException("Internal Server Error")
         }
     }
 }

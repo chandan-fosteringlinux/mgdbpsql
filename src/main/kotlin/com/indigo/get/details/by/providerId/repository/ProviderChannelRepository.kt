@@ -47,7 +47,7 @@ class ProviderChannelRepository(private val dataSource: DataSource) {
             }
         } catch (e: SQLException) {
             LOG.error("PostgreSQL connection failed: ${e.message}", e)
-            throw DatabaseUnavailableException("PostgreSQL is not reachable: ${e.message}")
+            throw DatabaseUnavailableException("Internal Server Error")
         } catch (e: IllegalArgumentException) {
             LOG.error("Invalid UUID format: ${e.message}", e)
             throw InvalidProviderIdException("Invalid UUID format for providerId: ${e.message}")
